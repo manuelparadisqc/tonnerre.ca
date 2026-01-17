@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tonnerre</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .brand {
+            color: #00ff99;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            filter: drop-shadow(0 0 5px rgba(0, 255, 153, 0.5));
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .contact-link {
+            color: #00ff99;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: #66ffbb;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 2rem;
+            padding-left: 3rem;
+            padding-top: 16rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            max-width: 1200px;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            text-align: left;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .hero-description p {
+            color: #00ff99;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            text-align: justify;
+        }
+
+        .services {
+            margin-top: 4rem;
+            max-width: 1000px;
+            padding-bottom: 4rem;
+        }
+
+        .service-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .service-section h2 {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: color 0.3s;
+        }
+
+        .service-section h2:hover {
+            color: #ccc;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            color: #00ff99;
+            font-weight: 300;
+        }
+
+        .service-section ul {
+            list-style: none;
+            padding-left: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .service-section li {
+            color: #999;
+            font-size: 1rem;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-section li:before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="brand">
+            <svg class="logo" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="13" fill="#00ff99"/>
+                <line x1="10" y1="20" x2="20" y2="10" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            TONNERRE - INTELLIGENCE D'AFFAIRES
+        </div>
+        <div class="nav-buttons">
+            <a href="mailto:manuel.paradis.qc@gmail.com" class="contact-link">CONTACT</a>
+            <a href="https://www.linkedin.com/in/manuel-paradis-400778a8/" target="_blank" class="contact-link">LINKEDIN</a>
+            <a href="#cv" class="contact-link">CV</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Tonnerre - Intelligence d'affaires</h1>
+        <div class="hero-description">
+            <p>Accompagnement et soutien en recherche de financement, analyse et exploitation de données et d'informations, analyses socioéconomiques et appui à la décision, rédaction stratégique, coordination, évaluation et suivi de projets et reddition de comptes.</p>
+        </div>
+        
+        <div class="services">
+            <div class="service-section">
+                <h2 class="service-title" onclick="toggleService(this)">
+                    <span class="arrow">+</span>
+                    Recherche de financement
+                </h2>
+                <ul class="service-list">
+                    <li>Analyse des besoins et des opportunités de financement</li>
+                    <li>Identification des programmes</li>
+                    <li>Rédaction et coordination des demandes de financement</li>
+                </ul>
+            </div>
+
+            <div class="service-section">
+                <h2 class="service-title" onclick="toggleService(this)">
+                    <span class="arrow">+</span>
+                    Analyse et exploitation de données et d'informations
+                </h2>
+                <ul class="service-list">
+                    <li>Collecte, structuration et validation des données</li>
+                    <li>Analyses quantitatives et qualitatives</li>
+                    <li>Production de synthèses analytiques et d'outils d'aide à la décision</li>
+                    <li>Mise en valeur des résultats</li>
+                    <li>Analyses socioéconomiques</li>
+                    <li>Appui stratégique à la prise de décision</li>
+                </ul>
+            </div>
+
+            <div class="service-section">
+                <h2 class="service-title" onclick="toggleService(this)">
+                    <span class="arrow">+</span>
+                    Rédaction stratégique
+                </h2>
+                <ul class="service-list">
+                    <li>Rapports d'analyse</li>
+                    <li>Notes de breffage, mémoires et documents stratégiques</li>
+                    <li>Rapports destinés aux bailleurs de fonds</li>
+                    <li>Vulgarisation stratégique</li>
+                </ul>
+            </div>
+
+            <div class="service-section">
+                <h2 class="service-title" onclick="toggleService(this)">
+                    <span class="arrow">+</span>
+                    Coordination, évaluation et suivi de projets
+                </h2>
+                <ul class="service-list">
+                    <li>Coordination de projets et de partenariats</li>
+                    <li>Mise en place de cadres de suivi et d'évaluation</li>
+                    <li>Définition d'indicateurs de performance</li>
+                    <li>Reddition de comptes</li>
+                </ul>
+            </div>
+
+
+            <!-- <div class="service-section">
+                <h2 class="service-title" onclick="toggleService(this)">
+                    <span class="arrow">+</span>
+                    projet
+                </h2>
+                <ul class="service-list">
+                    <li>Accompagnement et renforcement des connaissances et des capacités économiques et financières des communautés autochtones</li>
+                    <li>Microsites de formations</li>
+                    <li>Podcast et vidéo</li>
+                    <li>Formations et atelier</li>
+                    <li>En langue autochtone, français et anglais</li>
+                </ul>
+            </div> -->
+            
+        </div>
+    </section>
+
+    <script>
+        function toggleService(element) {
+            const list = element.nextElementSibling;
+            const arrow = element.querySelector('.arrow');
+            
+            if (list.style.display === 'none') {
+                list.style.display = 'block';
+                arrow.textContent = '−';
+            } else {
+                list.style.display = 'none';
+                arrow.textContent = '+';
+            }
+        }
+
+        // Fermer toutes les listes au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const lists = document.querySelectorAll('.service-list');
+            lists.forEach(list => list.style.display = 'none');
+        });
+    </script>
+</body>
+</html>
